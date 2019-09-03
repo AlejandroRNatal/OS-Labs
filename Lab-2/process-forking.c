@@ -23,10 +23,11 @@ void main()
 
     else if (pid==0)
      {
-
+        printf("\n");
         execlp("/bin/ps", "ps", NULL);
+        printf("\n\n");
 
-        printf("Still around...\n");
+        printf("Still around...\n\n");
     }
 
     else 
@@ -41,7 +42,7 @@ void main()
 
         else
         {
-            // printf("Executed successfully\n");
+            printf("\n\nExecuted Parent successfully\n");
             printf("Child's PID: %d\n\n", pid);
 
         }
