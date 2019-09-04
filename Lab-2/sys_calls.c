@@ -5,12 +5,12 @@
 
 
 int main(){
-char cmd[100];
+    char cmd[100];
 
-strcpy(cmd,"ls -al");
-system(cmd);
+    strcpy(cmd,"ls -al");
+    system(cmd);
 
-return 0;
+    return 0;
 }
 
 
