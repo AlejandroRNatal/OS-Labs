@@ -95,9 +95,8 @@ void execute(char *argv[]){
 
 		else if (pid==0)
 		{
-			char *const parmList[] = {"/bin/ls", "-l", "/u/userid/dirname", NULL};
 			printf("\n");
-			// execv(argv[0], parmList);
+;
 			child_process(pid, pid, argv[0]);
 			printf("\n\n");
 			exit(0);
@@ -106,7 +105,6 @@ void execute(char *argv[]){
 
 		else 
 		{
-			//child_process(pid,(int) getpid(), argv[0]);
 			int wait_pid = waitpid(pid);
 
 			if( wait_pid < 0)
@@ -117,12 +115,6 @@ void execute(char *argv[]){
 
 			else
 			{
-				// printf("\n\nExecuted Parent successfully\n");
-				// printf("Child's PID: %d\n\n", pid);
-			// 	char *const parmList[] = {"/bin/ls", "-l", "/u/userid/dirname", NULL};
-			// printf("\n");
-			// execv(argv[0], parmList);
-			// printf("\n\n");
 
 			}
 			//Wait for the child process to finish before continuing
@@ -161,16 +153,12 @@ char * get_directory_of(char* cmd, char * cdir)
 
 void child_process(int pid, int parent_pid, char* cmd)
 {
-	// char * direct_to_exec;
-	// get_directory_of(cmd, direct_to_exec);
-	// char *const parmList[] = {"/bin/ls", "-l", NULL};
-    //printf("Child PID: %d \nParent PID: %d\n\n", pid, parent_pid);
-	// execl(direct_to_exec, cmd,(char *) NULL);
 	system(cmd);
 	exit(0);
 }
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
 	int valid = 0;
 	char *line = (char*)malloc(DEFAULT_SIZE);
 
